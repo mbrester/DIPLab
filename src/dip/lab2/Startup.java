@@ -28,8 +28,9 @@ public class Startup {
         
         w.setBaseTipPerBag(2);
         
-        TipManager t = new TipManager(w);
+        TipManager t = new TipManager(new FoodServiceTipCalculator(TipCalculator.ServiceQuality.FAIR,5));
          
+        t.setFairRate(.12);
         
         System.out.println(t.getTip());
     }

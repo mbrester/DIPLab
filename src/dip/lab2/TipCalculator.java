@@ -12,12 +12,13 @@ package dip.lab2;
  */
 public interface TipCalculator {
     public abstract double getTip();
-    public static final double GOOD_RATE = 0.20;
-    public static final double FAIR_RATE = 0.15;
-    public static final double POOR_RATE = 0.10;
+    public abstract void setGoodRate(double good);
+    public abstract void setFairRate(double fair);
+    public abstract void setPoorRate(double poor);
+    
     
    
-    public enum ServiceQuality {
+    public static enum ServiceQuality {
         GOOD, FAIR, POOR
     }
 }

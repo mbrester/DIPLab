@@ -13,6 +13,9 @@ public class BaggageServiceTipCalculator implements TipCalculator {
 
     private double baseTipPerBag;
     private double bagCount;
+    private double goodRate;
+    private double fairRate;
+    private double poorRate;
     
     private ServiceQuality serviceQuality;
 
@@ -30,13 +33,13 @@ public class BaggageServiceTipCalculator implements TipCalculator {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
@@ -74,6 +77,20 @@ public class BaggageServiceTipCalculator implements TipCalculator {
                     "error: base tip must be greater than or equal to zero");
         }
         this.baseTipPerBag = baseTipPerBag;
+    }
+     @Override
+    public void setGoodRate(double good) {
+        this.goodRate = good;
+    }
+
+    @Override
+    public void setFairRate(double fair) {
+        this.fairRate = fair;
+    }
+
+    @Override
+    public void setPoorRate(double poor) {
+        this.poorRate = poor;
     }
 
 }

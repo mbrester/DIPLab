@@ -10,6 +10,9 @@ package dip.lab2;
  */
 public class FoodServiceTipCalculator implements TipCalculator {
     private double minBill;
+    private double goodRate;
+    private double fairRate;
+    private double poorRate;
     
            
     private double bill;
@@ -27,13 +30,13 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * GOOD_RATE;
+                tip = bill * goodRate;
                 break;
             case FAIR:
-                tip = bill * FAIR_RATE;
+                tip = bill * fairRate;
                 break;
             case POOR:
-                tip = bill * POOR_RATE;
+                tip = bill * poorRate;
                 break;
         }
 
@@ -58,6 +61,21 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
     public ServiceQuality getServiceQuality() {
         return serviceQuality;
+    }
+
+    @Override
+    public void setGoodRate(double good) {
+        this.goodRate = good;
+    }
+
+    @Override
+    public void setFairRate(double fair) {
+        this.fairRate = fair;
+    }
+
+    @Override
+    public void setPoorRate(double poor) {
+        this.poorRate = poor;
     }
 
 }

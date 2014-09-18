@@ -25,4 +25,19 @@ public class TipManager {
         return tip.getTip();
     }
     
+     
+    public void setGoodRate(double good) {
+        tip.setGoodRate(good);
+    }
+
+    
+    public void setFairRate(double fair) {
+        tip.setFairRate(fair);
+    }
+
+    
+    public void setPoorRate(double poor) {
+        tip.setPoorRate(poor);
+    }
+    
 }
