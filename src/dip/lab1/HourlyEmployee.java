@@ -6,7 +6,10 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee implements Employee {
+    private double hourlyRate;
+    private double totalHrsForYear;
+    
     
     /** default constructor. Is this the best way to go? */
     public HourlyEmployee() {}
@@ -19,6 +22,37 @@ public class HourlyEmployee extends Employee {
     public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
         setHourlyRate(hourlyRate);
         setTotalHrsForYear(totalHrsForYear);
+    }
+
+    @Override
+    public double getAnnualPay() {
+        return hourlyRate * totalHrsForYear;
+    }
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+   
+    public void setHourlyRate(double hourlyRate) {
+        if(hourlyRate < 7.25){
+           throw new IllegalArgumentException("Error: Hourly Rate must be atleast Minimum wage");
+        }
+        this.hourlyRate = hourlyRate;
+        
+    }
+
+  
+    public double getTotalHrsForYear() {
+         return totalHrsForYear;
+    }
+
+  
+    public void setTotalHrsForYear(double totalHrsForYear) {
+        if(totalHrsForYear <0){
+              throw new IllegalArgumentException ("Error: Total Hours must be atleast 0");
+        }
+        this.totalHrsForYear = totalHrsForYear;
     }
 
 }

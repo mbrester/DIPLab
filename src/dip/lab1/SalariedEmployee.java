@@ -6,8 +6,9 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class SalariedEmployee extends Employee {
-
+public class SalariedEmployee implements Employee {
+    private double annualSalary;
+    private double annualBonus;
     /** default constructor. Is this the best way to go? */
     public SalariedEmployee() {}
 
@@ -20,6 +21,38 @@ public class SalariedEmployee extends Employee {
         setAnnualSalary(annualSalary);
         setAnnualBonus(annualBonus);
     }
+
+    @Override
+    public double getAnnualPay() {
+        return annualSalary + annualBonus;
+    }
+
+    public double getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(double annualSalary) {
+        if(annualSalary < 0){
+              throw new IllegalArgumentException("Error: Annual Salary must be atleast 0");
+        }
+        this.annualSalary = annualSalary;
+    }
+
+    public double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public void setAnnualBonus(double annualBonus) {
+        if(annualBonus < 0){
+              throw new IllegalArgumentException("Error: Annual Bonus must be atleast 0");
+        }
+        this.annualBonus = annualBonus;
+    }
+
+  
+
+
+ 
 
     
 }
