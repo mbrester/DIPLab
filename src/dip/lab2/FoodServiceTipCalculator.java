@@ -41,6 +41,9 @@ public class FoodServiceTipCalculator implements TipCalculator {
     }
 
     public void setMinBill(double minBill) {
+        if(minBill<0){
+            throw new IllegalArgumentException("Error: MinBill must be greater than 0");
+        }
         this.minBill = minBill;
     }
 
