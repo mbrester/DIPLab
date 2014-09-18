@@ -17,10 +17,10 @@ public class Startup {
          */
 
         //Low-level modules
-        HourlyEmployee emp1 = new HourlyEmployee(7.25, 2020);
-        SalariedEmployee emp2 = new SalariedEmployee(45000, 1250);
-        SalariedEmployee emp3 = new SalariedEmployee(90000,0);
-        HourlyEmployee emp4 = new HourlyEmployee(9.00,1000);
+        Employee emp1 = new HourlyEmployee(7.25, 2020);
+        Employee emp2 = new SalariedEmployee(45000, 1250);
+        Employee emp3 = new SalariedEmployee(90000,0);
+        Employee emp4 = new HourlyEmployee(9.00,1000);
 
         // High-level module
         HRService hr = new HRService();

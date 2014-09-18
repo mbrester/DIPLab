@@ -24,13 +24,10 @@ public class Startup {
    
  
     public static void main(String[] args) {
-        BaggageServiceTipCalculator w = new BaggageServiceTipCalculator(TipCalculator.ServiceQuality.GOOD,5);
         
-        w.setBaseTipPerBag(2);
-        
-        TipManager t = new TipManager(new FoodServiceTipCalculator(TipCalculator.ServiceQuality.FAIR,5));
+        TipManager t = new TipManager(new BaggageServiceTipCalculator(TipCalculator.ServiceQuality.FAIR,5));
          
-        t.setFairRate(.12);
+        t.setFairRate(.20);
         
         System.out.println(t.getTip());
     }
