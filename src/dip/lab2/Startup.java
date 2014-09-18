@@ -24,7 +24,7 @@ public class Startup {
    
  
     public static void main(String[] args) {
-        BaggageServiceTipCalculator w = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.GOOD,5);
+        BaggageServiceTipCalculator w = new BaggageServiceTipCalculator(TipCalculator.ServiceQuality.GOOD,5);
         
         w.setBaseTipPerBag(2);
         

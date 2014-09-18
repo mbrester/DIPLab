@@ -13,9 +13,7 @@ public class BaggageServiceTipCalculator implements TipCalculator {
 
     private double baseTipPerBag;
     private double bagCount;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
+    
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, double bags) {

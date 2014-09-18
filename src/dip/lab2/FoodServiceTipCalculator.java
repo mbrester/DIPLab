@@ -13,9 +13,7 @@ public class FoodServiceTipCalculator implements TipCalculator {
     
            
     private double bill;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
+    
     private ServiceQuality serviceQuality;
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
