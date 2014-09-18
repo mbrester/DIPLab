@@ -35,8 +35,8 @@ public class HourlyEmployee implements Employee {
 
    
     public void setHourlyRate(double hourlyRate) {
-        if(hourlyRate < 7.25){
-           throw new IllegalArgumentException("Error: Hourly Rate must be atleast Minimum wage");
+        if(hourlyRate < 7.25 || hourlyRate > 300.00){
+           throw new IllegalArgumentException("Error: Hourly Rate must be atleast Minimum wage and no higher than 300.00");
         }
         this.hourlyRate = hourlyRate;
         

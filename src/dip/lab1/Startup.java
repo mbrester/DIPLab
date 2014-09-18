@@ -20,6 +20,7 @@ public class Startup {
         HourlyEmployee emp1 = new HourlyEmployee(7.25, 2020);
         SalariedEmployee emp2 = new SalariedEmployee(45000, 1250);
         SalariedEmployee emp3 = new SalariedEmployee(90000,0);
+        HourlyEmployee emp4 = new HourlyEmployee(9.00,1000);
 
         // High-level module
         HRService hr = new HRService();
@@ -34,6 +35,8 @@ public class Startup {
             nf.format(hr.getAnnualCompensationForEmployee(emp2)));
         System.out.println("Employee 3 annual compensation: " +
             nf.format(hr.getAnnualCompensationForEmployee(emp3)));
+        System.out.println("Employee 4 annual compensation: " +
+            nf.format(hr.getAnnualCompensationForEmployee(emp4)));
         
     }
 
